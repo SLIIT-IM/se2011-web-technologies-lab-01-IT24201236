@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Tech Store</title>
+    <!-- Note: This is the HTML structure lab. Styling will be added in Lab 02 (CSS) and interactivity in Lab 03 (JavaScript). -->
+</head>
+<body>
+
+    <!-- ==================== HEADER SECTION ==================== -->
+    <header>
+        <!-- Logo image: ensure logo.png is placed inside src/images/ folder -->
+   <img src="images/logo2.jpg" alt="Campus Tech Store Logo" width="120" style="max-width:100%; height:auto;">
+        <h1>Campus Tech Store</h1>
+        <p>Your student-friendly place for tech essentials</p>
+    </header>
+
+    <!-- ==================== NAVIGATION MENU ==================== -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#offers">Student Offers</a></li>   <!-- Link to new offers section -->
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main>
+
+        <!-- ---------- HOME SECTION ---------- -->
+        <section id="home">
+            <h2>Welcome to Campus Tech Store</h2>
+            <p>
+                We provide useful and affordable tech products for university students.  
+                Explore laptops, headphones, smart watches, and accessories in one place.  
+            </p>
+            <!-- Hero image: ensure hero.jpg is placed inside src/images/ folder -->
+            <img src="images/hero2.jpg" alt="Students using technology" width="100%" style="max-width:800px; height:auto;">
+        </section>
+
+        <!-- ---------- PRODUCTS SECTION (with table) ---------- -->
+        <section id="products">
+            <h2>Our Products</h2>
+            <p>Here are some popular items available for students.</p>
+
+            <!-- Product table: includes original 3 products + 1 additional row (Task B) -->
+            <table border="1">
+                <!-- Table header row -->
+                <tr>
+                    <th>Product Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+                <!-- Existing product 1 -->
+                <tr>
+                    <td>Laptop</td>
+                    <td>Good for assignments, programming, and online lectures</td>
+                    <td>Rs. 185000</td>
+                </tr>
+                <!-- Existing product 2 -->
+                <tr>
+                    <td>Headphones</td>
+                    <td>Useful for music, meetings, and video lessons</td>
+                    <td>Rs. 8500</td>
+                </tr>
+                <!-- Existing product 3 -->
+                <tr>
+                    <td>Smart Watch</td>
+                    <td>Helps track time, fitness, and notifications</td>
+                    <td>Rs. 12000</td>
+                </tr>
+                <!-- NEW PRODUCT ROW (Task B: USB Flash Drive) -->
+                <tr>
+                    <td>USB Flash Drive</td>
+                    <td>Useful for storing and transferring files</td>
+                    <td>Rs. 2500</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- ---------- NEW SECTION: STUDENT OFFERS (Task A) ---------- -->
+        <section id="offers">
+            <h2>Student Offers</h2>
+            <p>Exclusive deals and discounts just for our campus community. Don't miss out!</p>
+            <!-- Ordered list with 3 special offers -->
+            <ol>
+                <li>10% discount for first-year students</li>
+                <li>Free delivery inside campus</li>
+                <li>Free laptop bag with selected items</li>
+            </ol>
+        </section>
+
+        <!-- ---------- ABOUT SECTION ---------- -->
+        <section id="about">
+            <h2>About Us</h2>
+            <p>
+                Campus Tech Store was created to help students find simple and affordable
+                technology products for study and daily use.
+            </p>
+            <p>
+                This website is built as a learning project for HTML, CSS, and JavaScript.
+            </p>
+        </section>
+
+        <!-- ---------- CONTACT SECTION WITH FORM (Task C: added phone number field) ---------- -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form>
+                <!-- Full name field -->
+                <label for="fullname">Full Name:</label><br>
+                <input type="text" id="fullname" name="fullname"><br><br>
+
+                <!-- Email address field -->
+                <label for="email">Email Address:</label><br>
+                <input type="email" id="email" name="email"><br><br>
+
+                <!-- NEW PHONE NUMBER FIELD (Task C) -->
+                <label for="phone">Phone Number:</label><br>
+                <input type="text" id="phone" name="phone"><br><br>
+
+                <!-- Message textarea -->
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="5" cols="30"></textarea><br><br>
+
+                <!-- Submit button -->
+                <input type="submit" value="Send Message">
+            </form>
+        </section>
+
+    </main>
+
+    <!-- ==================== FOOTER SECTION ==================== -->
+    <!-- Task D: Added an external link to W3Schools with target="_blank" -->
+    <footer>
+        <hr>
+        <p>&copy; 2026 Campus Tech Store. All rights reserved.</p>
+        <p>Designed for IT1100 HTML Lab</p>
+        <!-- External hyperlink (Task D) -->
+        <p><a href="https://www.w3schools.com/" target="_blank">Visit W3Schools </a></p>
+    </footer>
+
+</body>
+</html>
