@@ -1,14 +1,16 @@
-# SE2011---Web-Technologies---Lab-01
 
-# Lab Sheet 01 – HTML Website Skeleton
+
+
+# SE2011---Web-Technologies---Lab-02
+
+
+# Lab Sheet 02 – CSS Styling for the Website
 
 **Module:** IT1100 – Internet and Web Technologies  
-**Topic:** HTML Basics and Page Structure  
+**Topic:** CSS Basics and Page Styling  
 **Duration:** 2 Hours  
 **Type:** Self-guided lab sheet  
-**Output:** A complete multi-section website skeleton that will be improved in the next CSS and JavaScript lab sheets
-
-This lab sheet is designed to match the HTML page structure, folder organization, and web-page development approach used in your lecture and earlier lab materials, where students first create the website structure in HTML, then style it with CSS, and later add interactivity with JavaScript. The earlier materials also use a project folder with separate `images`, `styles`, and `js` folders, and begin with building the page structure in `index.html`.
+**Important:** This lab sheet continues from **Lab Sheet 01 – HTML Website Skeleton**. You must use the same website you created in Lab 01 and apply all CSS changes to that existing project.
 
 ---
 
@@ -16,661 +18,729 @@ This lab sheet is designed to match the HTML page structure, folder organization
 
 By the end of this lab, you should be able to:
 
-- create the folder structure of a simple website
-- create and save an HTML file correctly
-- understand the basic structure of an HTML document
-- use common HTML tags such as headings, paragraphs, images, links, lists, tables, forms, and semantic layout tags
-- build the **skeleton** of a complete website using only HTML
-- prepare the website properly for the next CSS and JavaScript labs
+- understand what CSS is and why it is used
+- identify the three ways of using CSS:
+  - inline CSS
+  - internal CSS
+  - external CSS
+- practice inline CSS, internal CSS, and external CSS
+- create and connect an external CSS file
+- apply CSS to an existing HTML page
+- style headings, paragraphs, images, navigation bars, tables, forms, and footer
+- use selectors such as element selectors, class selectors, and ID selectors
+- improve the appearance of the website created in Lab 01
+- continue the same website so it is ready for the JavaScript lab
 
 ---
 
-## 2. What you will build
+## 2. What you will do in this lab
 
-In this lab, you will create the HTML structure for a simple website called:
+In Lab 01, you created the **structure** of the website using HTML.
 
-**Campus Tech Store**
+In this lab, you will style that same website using CSS so that it becomes a clean, simple, nice-looking page.
 
-This is a simple student-friendly product website.  
-In this lab, you will only create the **structure and content**.
+You will:
 
-In the next labs:
+- keep the same `index.html`
+- learn the three ways of applying CSS
+- practice **inline CSS**
+- practice **internal CSS**
+- create a CSS file named `styles.css`
+- link that CSS file to `index.html`
+- style the website step by step using **external CSS**
+- apply the final task on top of the **final answer from Lab 01**
 
-- **Lab 02 (CSS):** you will style this same website
-- **Lab 03 (JavaScript):** you will add interactive features to this same website
-
-So do not worry if the page looks plain at this stage.  
-That is normal.  
-This lab is about building the page correctly first.
-
----
-
-## 3. Software needed
-
-You can use any code editor such as:
-
-- Visual Studio Code
-- Notepad++
-- Sublime Text
-- even Windows Notepad
-
-You also need a web browser such as:
-
-- Google Chrome
-- Microsoft Edge
-- Firefox
+So this lab is not a new website.  
+It is the **same Campus Tech Store website**, improved using CSS.
 
 ---
 
-## 4. Time plan for the 2-hour lab
+## 3. Before you start: what is CSS?
 
-### First hour
+CSS stands for **Cascading Style Sheets**.
 
-You will learn and build all the necessary HTML step by step.
+CSS is used to control how HTML elements look on the page.  
+For example, CSS is used for:
 
-### Last hour
+- colors
+- fonts
+- spacing
+- borders
+- alignment
+- layout
+- hover effects
 
-You will complete a final task by extending the same webpage on your own using the instructions in this lab sheet.
+CSS can be written in three ways:
 
----
+- **inline CSS**
+- **internal CSS**
+- **external CSS**
 
-## 5. Before you start: what is HTML?
-
-HTML stands for **Hyper Text Markup Language**.  
-It is the standard language used to create web pages.  
-The browser reads HTML and displays the page content to the user. A basic HTML document contains `<!DOCTYPE html>`, `<html>`, `<head>`, and `<body>`. The lectures also introduce common HTML elements such as headings, paragraphs, images, and structural elements like header, footer, and navigation.
-
-HTML is used to define the **structure** of the page.
-
-For example:
-
-- headings
-- paragraphs
-- images
-- menus
-- tables
-- forms
-- sections of a webpage
-
-HTML is **not mainly for design**.  
-Design will come later with CSS.
+In this lab, you will learn all three.  
+However, for a complete website, **external CSS** is the best and most organized method.
 
 ---
 
-## 6. Create the project folder structure
+## 4. The three ways of using CSS
 
-Follow these steps very carefully.
+Before styling the full website, let us understand the three methods.
 
-### Step 1: Create the main folder
+### 4.1 Inline CSS
 
-Create a folder named:
+Inline CSS is written **inside an HTML tag** using the `style` attribute.
 
-```text
-IWT_Lab_01
+### Example:
+
+```html
+<p style="color: blue;">This is a blue paragraph.</p>
 
 ```
 
+### Why is it called inline CSS?
+
+Because the CSS is written directly **in the same line** or inside the HTML element itself.
+
+### When is it useful?
+
+Inline CSS is useful for:
+
+- very small quick changes
+- testing a style quickly
+- styling only one single element
+
+### What is the disadvantage?
+
+It is not a good choice for large websites, because:
+
+- it mixes HTML and CSS together
+- it becomes hard to manage
+- you must repeat code many times
+
+---
+
+### 4.2 Internal CSS
+
+Internal CSS is written inside the `<style>` tag in the `<head>` section of the HTML file.
+
+### Example:
+
+```html
+<head>
+    <style>
+        p {
+            color: green;
+        }
+    </style>
+</head>
+
+```
+
+### Why is it called internal CSS?
+
+Because the CSS stays **inside the same HTML file**.
+
+### When is it useful?
+
+Internal CSS is useful for:
+
+- styling one single page
+- testing styles while learning
+- small projects with only one page
+
+### What is the disadvantage?
+
+It is not ideal for bigger websites, because:
+
+- all styles stay inside one HTML file
+- if you have many pages, you must repeat the same CSS in each file
+
+---
+
+### 4.3 External CSS
+
+External CSS is written in a **separate `.css` file** and linked to the HTML file.
+
+### Example in HTML:
+
+```html
+<link rel="stylesheet" href="styles/styles.css">
+
+```
+
+### Why is it called external CSS?
+
+Because the CSS is stored **outside the HTML file**.
+
+### Why is it the best method for this lab?
+
+Because it:
+
+- keeps HTML and CSS separate
+- makes the code cleaner
+- makes changes easier
+- can style many pages from one file
+
+---
+
+## 5. Quick practice – inline CSS
+
+Before moving to the full website styling, let us practice inline CSS.
+
+Open your `index.html` file and temporarily try this small example inside the `<body>`:
+
+### Example:
+
+```html
+<h2 style="color: darkred;">Inline CSS Example</h2>
+<p style="background-color: lightyellow;">This paragraph uses inline CSS.</p>
 
 
-### Step 2: Create subfolders inside it
+```
 
-Inside `IWT_Lab_01`, create these folders:
+### Explanation
+
+### `style="color: darkred;"`
+
+This directly changes the text color of the heading.
+
+### `style="background-color: lightyellow;"`
+
+This directly changes the background color of the paragraph.
+
+### Practice task
+
+Try changing:
+
+- the heading color
+- the paragraph background color
+- the text alignment
+
+### Example:
+
+```html
+<p style="color: white; background-color: teal; text-align: center;">
+    Practicing inline CSS is simple.
+</p>
+
+
+```
+### Important note
+
+After practicing, you may remove these examples or keep them only for learning.  
+For the main website styling, we will mainly use **external CSS**.
+
+---
+
+## 6. Quick practice – internal CSS
+
+Now let us practice internal CSS.
+
+Inside the `<head>` section of `index.html`, temporarily add:
+
+### Example:
+
+```html
+<style>
+    .internal-demo {
+        color: white;
+        background-color: darkblue;
+        padding: 10px;
+    }
+</style>
+
+```
+Now inside the `<body>`, add:
+
+### HTML:
+
+```html
+<p class="internal-demo">This paragraph uses internal CSS.</p>
+
+
+```
+
+### Explanation
+
+### `<style> ... </style>`
+
+This is where internal CSS is written.
+
+### `.internal-demo`
+
+This is a class selector.
+
+It styles any element with:
+
+```html
+class="internal-demo"
+
+```
+### `padding: 10px;`
+
+This adds space inside the paragraph.
+
+### Practice task
+
+Try changing:
+
+- the background color
+- the text color
+- the font size
+
+### Example:
+
+```html
+<style>
+    .internal-demo {
+        color: black;
+        background-color: lightgreen;
+        font-size: 20px;
+        padding: 10px;
+    }
+</style>
+
+```
+### Important note
+
+Internal CSS is useful for learning, but for the full website, we will now move to **external CSS**.
+
+---
+
+## 7. Project folder you should already have
+
+You should already have this folder structure from Lab 01:
 
 ```text
 IWT_Lab_01
 │
 ├── src
 │   ├── images
+│   │   ├── logo.png
+│   │   └── hero.jpg
 │   ├── styles
-│   └── js
+│   ├── js
+│   └── index.html
+
 
 ```
-
-This kind of folder structure is consistent with the previous lab sheets, where students create a main folder and separate subfolders for images, styles, scripts, and the HTML file.
-
-### Step 3: Create the HTML file
-
-Inside the `src` folder, create a file named:
+Now, for this CSS lab, create this new file inside the `styles` folder:
 
 ```text
-index.html
+IWT_Lab_01/src/styles/styles.css
 
 ```
-So the location should be:
+
+## 8. Step 1 – Create the CSS file
+
+Inside the `styles` folder, create a file named:
 
 ```text
-IWT_Lab_01/src/index.html
-
-```
-## 7. Open the file in the editor
-
-Open `index.html` in your code editor.
-
-Type the following basic HTML structure:
-
-```html
-<!DOCTYPE html>  
-<html>  
-<head>  
-    <title>Campus Tech Store</title>  
-</head>  
-<body>  
-  
-</body>  
-</html>
+styles.css
 
 ```
 
-## 8. Understand the basic HTML structure
+Path:
 
-Let us understand every line.
+```text
+IWT_Lab_01/src/styles/styles.css
 
-### `<!DOCTYPE html>`
+```
+## 9. Step 2 – Link the CSS file to `index.html`
 
-This tells the browser that this is an HTML5 document.
+Open your existing `index.html` from Lab 01.
 
-**Why do we add it?**  
-Because it helps the browser display the page in the correct modern standard.
-
-### `<html> ... </html>`
-
-This is the root element of the whole HTML page.
-
-**Why do we add it?**  
-Because all the HTML code must be inside this tag.
-
-### `<head> ... </head>`
-
-This section contains information **about** the page, not the visible page content.
-
-**Why do we add it?**  
-Because things like the page title and later CSS links are placed here.
-
-### `<title>Campus Tech Store</title>`
-
-This sets the page title shown on the browser tab.
-
-**Why do we add it?**  
-Because every web page should have a meaningful title.
-
-### `<body> ... </body>`
-
-This contains all the visible content shown in the browser.
-
-**Why do we add it?**  
-Because headings, images, menus, tables, and forms must appear inside the body.
-
-These ideas directly match the lecture and lab content that explains the HTML document structure and the purpose of the `head` and `body` sections.
-
----
-
-## 9. The website plan
-
-We will build one single page with these parts:
-
-1.  Header area  
-2.  Navigation menu  
-3.  Hero section  
-4.  Product section  
-5.  About section  
-6.  Contact form  
-7.  Footer  
-
-This is good for learning because it includes many important HTML elements in one simple website.
-
----
-
-## 10. Step-by-step website creation
-
----
-
-### Step 10.1 – Add the page title and basic meta information
-
-Replace your current code with this:
+Inside the `<head>` section, add this line:
 
 ```html
-<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Campus Tech Store</title>  
-</head>  
-<body>  
-  
-</body>  
-</html>
+<link rel="stylesheet" href="styles/styles.css">
+
+```
+So your `<head>` section should now look like this:
+
+```html
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Tech Store</title>
+
+    <!-- Internal CSS practice -->
+    <style>
+        .internal-demo {
+            color: white;
+            background-color: darkblue;
+            padding: 10px;
+        }
+    </style>
+
+    <!-- External CSS file -->
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
 
 ```
 
 ### Explanation
 
-### `lang="en"`
+### `rel="stylesheet"`
 
-This says the page language is English.
+This tells the browser that the linked file is a stylesheet.
 
-**Why do we add it?**  
-Because it helps browsers, search engines, and accessibility tools understand the page language.
+### Why do we add it?
 
-### `<meta charset="UTF-8">`
+Because the browser must know that this file contains CSS rules.
 
-This allows the browser to correctly display many characters and symbols.
+### `href="styles/styles.css"`
 
-**Why do we add it?**  
-Because without it, some characters may display incorrectly.
+This gives the file path to the CSS file.
 
-### `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
+### Why do we add it?
 
-This helps the page behave better on mobile devices.
+Because the browser needs to know where the CSS file is located.
 
-**Why do we add it?**  
-Because modern web pages should work on different screen sizes.
+### Why do we still keep the `<style>` section here?
+
+Because students need to learn and practice **internal CSS** too.
+
+### Important
+
+In this lab:
+
+- **inline CSS** is practiced directly inside an element
+- **internal CSS** is practiced inside `<style>`
+- **external CSS** is used for the main full website styling
 
 ---
 
-## Step 10.2 – Add the website header
+## 10. Step 3 – Update the HTML slightly so CSS can target it better
 
-Now add this inside the `<body>` tag.
+Before writing CSS, make these small improvements to your Lab 01 final HTML.
+
+### 10.1 Add a class to the logo image
+
+Change this:
 
 ```html
-<header>
-    <img src="images/logo.png" alt="Campus Tech Store Logo" width="120">
-    <h1>Campus Tech Store</h1>
-    <p>Your student-friendly place for tech essentials</p>
-</header>
+<img src="images/logo.png" alt="Campus Tech Store Logo" width="120">
+
+
+```
+to this:
+
+### HTML:
+
+```html
+<img src="images/logo.png" alt="Campus Tech Store Logo" width="120" class="logo">
 
 ```
 
-### So now your body becomes:
+to this:
+
+### HTML:
 
 ```html
-<body>  
-    <header>  
-        <img src="images/logo.png" alt="Campus Tech Store Logo" width="120">  
-        <h1>Campus Tech Store</h1>  
-        <p>Your student-friendly place for tech essentials</p>  
-    </header>  
+<img src="images/logo.png" alt="Campus Tech Store Logo" width="120" class="logo">
+
+
+```
+
+### Why do we add `class="logo"`?
+
+Because a class helps us target this image in CSS and style it separately.
+
+---
+
+### 10.2 Add a class to the products table
+
+Change this:
+
+### HTML:
+
+```html
+<table border="1">
+
+```
+
+to this:
+
+### HTML:
+
+```html
+<table class="product-table">
+
+```
+
+### Why do we remove `border="1"`?
+
+Because now the table border should be controlled by CSS, not by HTML.
+
+### Why do we add `class="product-table"`?
+
+Because we want to style this table in a clean and organized way from CSS.
+
+---
+
+### 10.3 Add a class to the contact form
+
+Change this:
+
+### HTML:
+
+```html
+<form>
+
+
+```
+
+### Why do we add this class?
+
+Because later we will style the form area, input boxes, and button more easily.
+
+---
+
+### 10.4 Wrap the content inside a container
+
+Inside the `<body>`, place all visible content inside a wrapper `<div>`.
+
+So change your body from this style:
+
+### HTML:
+
+```html
+<body>
+    ...
+</body>
+
+
+```
+to this:
+
+### HTML:
+
+```html
+<body>
+    <div class="container">
+
+        <!-- all your existing content goes here -->
+
+    </div>
 </body>
 
 
 ```
 
-### Explanation
+### Why do we add a container?
 
-### `<header>`
-
-This is a semantic HTML tag.
-
-**Why do we add it?**  
-Because it clearly tells the browser and developer that this part is the top section of the webpage.
-
-### `<img>`
-
-This is used to show an image.
-
-**Why do we add it?**  
-Because most websites have a logo or banner image.
-
-### `src="images/logo.png"`
-
-This tells the browser where the image file is located.
-
-**Why do we add it?**  
-Because the browser needs the file path to load the image.
-
-### `alt="Campus Tech Store Logo"`
-
-This gives alternative text.
-
-**Why do we add it?**  
-Because if the image does not load, or if a screen reader is used, this text explains the image.
-
-### `width="120"`
-
-This controls the image width.
-
-**Why do we add it?**  
-Because very large images may look too big on the page.
-
-### `<h1>`
-
-This is the main heading of the page.
-
-**Why do we add it?**  
-Because every page should have one main heading.
-
-### `<p>`
-
-This adds a paragraph.
-
-**Why do we add it?**  
-Because short descriptive text makes the page clearer.
-
-### Important
-
-You should place an image named `logo.png` inside the `images` folder.
-
-Path:
-
-```text
-IWT_Lab_01/src/images/logo.png
-
-
-```
-
-### You can use any simple logo image.
+Because a container helps keep the page centered and gives the whole website a neat width.
 
 ---
 
-## Step 10.3 – Add the navigation menu
+## 11. Step 4 – Start writing CSS
 
-Below the header, add this code:
+Now open `styles.css`.
 
-```html
-<nav>
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
-
-```
-
-### Explanation
-
-### `<nav>`
-
-This defines the navigation section.
-
-**Why do we add it?**  
-Because menus help users move around the page.
-
-### `<ul>`
-
-This creates an unordered list.
-
-**Why do we add it?**  
-Because menus are often built using list items.
-
-### `<li>`
-
-This means list item.
-
-**Why do we add it?**  
-Because each menu option is one item.
-
-### `<a>`
-
-This creates a hyperlink.
-
-**Why do we add it?**  
-Because clicking a menu item should move the user to the correct section.
-
-### `href="#products"`
-
-This links to an element with the matching `id`.
-
-**Why do we add it?**  
-Because it allows jumping to a section inside the same page.
+We will build the styling in small steps.
 
 ---
 
-## Step 10.4 – Add the home section
+## 12. Step 5 – Add basic page styling
 
-Now add a main content area and the first section.
+Type this into `styles.css`:
 
-### HTML:
+### CSS:
 
-```html
-<main>
-    <section id="home">
-        <h2>Welcome to Campus Tech Store</h2>
-        <p>
-            We provide useful and affordable tech products for university students.  
-            Explore laptops, headphones, smart watches, and accessories in one place.  
-        </p>
-        <img src="images/hero.jpg" alt="Students using technology" width="400">
-    </section>
-</main>
+```css
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #222222;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 85%;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 20px;
+}
 
 
 ```
 
 ### Explanation
 
-### `<main>`
+### `body`
 
-This identifies the main content of the page.
+This selector targets the whole page.
 
-**Why do we add it?**  
-Because it separates the central content from header and footer.
+### `font-family: Arial, sans-serif;`
 
-### `<section>`
+This changes the text style.
 
-This groups related content together.
+### `background-color: #f4f6f8;`
 
-**Why do we add it?**  
-Because each part of the webpage should be organized clearly.
+This gives the page a light background color.
 
-### `id="home"`
+### `color: #222222;`
 
-This gives the section a unique name.
+This sets the default text color.
 
-**Why do we add it?**  
-Because the menu link `href="#home"` needs this `id` to work.
+### `margin: 0;`
 
-### `<h2>`
+Browsers add default space around the page, so we remove it.
 
-This is a second-level heading.
+### `.container`
 
-**Why do we add it?**  
-Because the page already has one main heading `<h1>`, so section titles should usually start from `<h2>`.
+This selector targets any element with class `container`.
+
+### `width: 85%;`
+
+This makes the content area take 85% of the page width.
+
+### `margin: auto;`
+
+This centers the container horizontally.
 
 ---
 
-## Step 10.5 – Add the product section
+## 13. Step 6 – Style the header
 
-Inside `<main>`, after the home section, add this section.
+Add this below the previous CSS:
 
-### HTML:
+### CSS:
 
-```html
-<section id="products">  
-    <h2>Our Products</h2>  
-    <p>Here are some popular items available for students.</p>  
-  
-    <table border="1">  
-        <tr>  
-            <th>Product Name</th>  
-            <th>Description</th>  
-            <th>Price</th>  
-        </tr>  
-        <tr>  
-            <td>Laptop</td>  
-            <td>Good for assignments, programming, and online lectures</td>  
-            <td>Rs. 185000</td>  
-        </tr>  
-        <tr>  
-            <td>Headphones</td>  
-            <td>Useful for music, meetings, and video lessons</td>  
-            <td>Rs. 8500</td>  
-        </tr>  
-        <tr>  
-            <td>Smart Watch</td>  
-            <td>Helps track time, fitness, and notifications</td>  
-            <td>Rs. 12000</td>  
-        </tr>  
-    </table>  
-</section>
+```css
+header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #e8f1fb;
+    border-bottom: 2px solid #c7d8ea;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+header h1 {
+    margin: 10px 0 5px 0;
+    color: #1d4d7a;
+}
+
+header p {
+    margin: 0;
+    font-size: 18px;
+}
+
 
 ```
 
 ### Explanation
 
-### `<table>`
+### `text-align: center;`
 
-This creates a table.
+This centers the header text.
 
-**Why do we add it?**  
-Because tables are useful for showing product data in rows and columns. Previous materials also use a product table in the web-page development lab.
+### `padding: 20px 0;`
 
-### `border="1"`
+This adds space inside the header.
 
-This makes the table border visible.
+### `border-bottom`
 
-**Why do we add it here?**  
-Because we are still in the HTML lab. Later, in the CSS lab, you will style it properly.
+This adds a line under the header.
 
-### `<tr>`
+### `.logo`
 
-This means table row.
+This styles the image with class `logo`.
 
-### `<th>`
+### `display: block;`
 
-This means table heading cell.
+Images are inline by default. We change it so it can be centered more easily.
 
-**Why do we use `<th>` instead of `<td>` for the first row?**  
-Because the first row contains labels such as Product Name, Description, and Price.
+### `margin: 0 auto 10px auto;`
 
-### `<td>`
-
-This means table data cell.
-
-**Why do we use it?**  
-Because it holds the actual content.
+This centers the image and adds bottom space.
 
 ---
 
-## Step 10.6 – Add the about section
+## 14. Step 7 – Style the navigation menu
 
-Below the products section, add:
+Add this CSS:
 
-### HTML:
+### CSS:
 
-```html
-<section id="about">
-    <h2>About Us</h2>
-    <p>
-        Campus Tech Store was created to help students find simple and affordable
-        technology products for study and daily use.
-    </p>
-    <p>
-        This website is built as a learning project for HTML, CSS, and JavaScript.
-    </p>
-</section>
+```css
+nav {
+    background-color: #1d4d7a;
+    margin-top: 15px;
+}
 
-```
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+}
 
+nav ul li {
+    display: inline-block;
+}
 
-### Explanation
+nav ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+}
 
-This section uses simple paragraphs to describe the website.
-
-**Why do we add this section?**  
-Because most websites include some information about the business, service, or project.
-
----
-
-## Step 10.7 – Add the contact section with a form
-
-Below the about section, add:
-
-### HTML:
-
-```html
-<section id="contact">
-    <h2>Contact Us</h2>
-    <form>
-        <label for="fullname">Full Name:</label><br>
-        <input type="text" id="fullname" name="fullname"><br><br>
-
-        <label for="email">Email Address:</label><br>
-        <input type="email" id="email" name="email"><br><br>
-
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" rows="5" cols="30"></textarea><br><br>
-
-        <input type="submit" value="Send Message">
-    </form>
-</section>
+nav ul li a:hover {
+    background-color: #163a5b;
+}
 
 
 ```
 
-
 ### Explanation
 
-Forms are introduced in your materials as an important part of web-based systems, and HTML forms are used to capture user data using input fields and related elements.
+### `list-style-type: none;`
 
-### `<form>`
+This removes bullet points from the list.
 
-This creates the form area.
+### `display: inline-block;`
 
-**Why do we add it?**  
-Because forms are used to collect user input.
+This makes the list items appear next to each other.
 
-### `<label>`
+### `text-decoration: none;`
 
-This gives a text label for an input field.
+This removes the default underline from links.
 
-**Why do we add it?**  
-Because users need to know what to enter.
+### `:hover`
 
-### `for="fullname"`
-
-This connects the label to the input with the same `id`.
-
-**Why do we add it?**  
-Because it improves clarity and accessibility.
-
-### `<input type="text">`
-
-This creates a one-line text box.
-
-**Why do we add it?**  
-Because the full name is short text.
-
-### `<input type="email">`
-
-This creates an email input field.
-
-**Why do we use `email` type instead of `text`?**  
-Because it is specifically meant for email addresses.
-
-### `<textarea>`
-
-This creates a larger text area.
-
-**Why do we add it?**  
-Because a message is usually longer than one line.
-
-### `<input type="submit">`
-
-This creates the submit button.
-
-**Why do we add it?**  
-Because forms usually need a button to send data.
-
-At this stage, the form will not truly process data.  
-That is okay.  
-For now, we are learning page structure.
+This changes the style when the mouse is placed over the link.
 
 ---
 
-## Step 10.8 – Add the footer
+## 15. Step 8 – Style the sections
 
-After `</main>`, add:
+Add:
 
-### HTML:
+### CSS:
 
-```html
-<footer>
-    <hr>
-    <p>&copy; 2026 Campus Tech Store. All rights reserved.</p>
-    <p>Designed for IT1100 HTML Lab</p>
-</footer>
+```css
+section {
+    padding: 25px 0;
+    border-bottom: 1px solid #dddddd;
+}
+
+section h2 {
+    color: #1d4d7a;
+    margin-bottom: 10px;
+}
+
+section p {
+    line-height: 1.6;
+}
 
 
 
@@ -678,35 +748,118 @@ After `</main>`, add:
 
 ### Explanation
 
-This section uses simple paragraphs to describe the website.
+### `section`
 
-**Why do we add this section?**  
-Because most websites include some information about the business, service, or project.
+This styles all section elements.
+
+### `line-height: 1.6;`
+
+This increases the space between lines and makes text easier to read.
 
 ---
 
-## Step 10.7 – Add the contact section with a form
+## 16. Step 9 – Style the hero image
 
-Below the about section, add:
+Add:
 
-### HTML:
+### CSS:
 
-```html
-<section id="contact">
-    <h2>Contact Us</h2>
-    <form>
-        <label for="fullname">Full Name:</label><br>
-        <input type="text" id="fullname" name="fullname"><br><br>
+```css
+#home img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    border-radius: 8px;
+}
 
-        <label for="email">Email Address:</label><br>
-        <input type="email" id="email" name="email"><br><br>
 
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" rows="5" cols="30"></textarea><br><br>
+```
 
-        <input type="submit" value="Send Message">
-    </form>
-</section>
+### Explanation
+
+### `#home img`
+
+This targets the image inside the element with `id="home"`.
+
+### `max-width: 100%;`
+
+This prevents the image from overflowing outside the content area.
+
+### `border-radius: 8px;`
+
+This rounds the corners.
+
+---
+
+## 17. Step 10 – Style the products table
+
+Add:
+
+### CSS:
+
+```css
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.product-table th,
+.product-table td {
+    border: 1px solid #b7c7d6;
+    padding: 12px;
+    text-align: left;
+}
+
+.product-table th {
+    background-color: #1d4d7a;
+    color: white;
+}
+
+.product-table tr:nth-child(even) {
+    background-color: #f2f7fb;
+}
+
+
+```
+
+### Explanation
+
+### `width: 100%;`
+
+This makes the table stretch to the width of the container.
+
+### `border-collapse: collapse;`
+
+This makes table borders join together.
+
+### `padding: 12px;`
+
+This gives space inside each cell.
+
+### `tr:nth-child(even)`
+
+This selects even rows.
+
+---
+
+## 18. Step 11 – Style the ordered list in the Student Offers section
+
+Remember: in Lab 01 final task, students added a **Student Offers** section.  
+Now we will style that too.
+
+Add:
+
+### CSS:
+
+```css
+#offers ol {
+    padding-left: 20px;
+}
+
+#offers li {
+    margin-bottom: 8px;
+}
 
 
 
@@ -714,435 +867,402 @@ Below the about section, add:
 
 ### Explanation
 
-Forms are introduced in your materials as an important part of web-based systems, and HTML forms are used to capture user data using input fields and related elements.
+### `padding-left: 20px;`
 
-### `<form>`
+This gives proper left spacing for the list numbers.
 
-This creates the form area.
+### `margin-bottom: 8px;`
 
-**Why do we add it?**  
-Because forms are used to collect user input.
-
-### `<label>`
-
-This gives a text label for an input field.
-
-**Why do we add it?**  
-Because users need to know what to enter.
-
-### `for="fullname"`
-
-This connects the label to the input with the same `id`.
-
-**Why do we add it?**  
-Because it improves clarity and accessibility.
-
-### `<input type="text">`
-
-This creates a one-line text box.
-
-**Why do we add it?**  
-Because the full name is short text.
-
-### `<input type="email">`
-
-This creates an email input field.
-
-**Why do we use `email` type instead of `text`?**  
-Because it is specifically meant for email addresses.
-
-### `<textarea>`
-
-This creates a larger text area.
-
-**Why do we add it?**  
-Because a message is usually longer than one line.
-
-### `<input type="submit">`
-
-This creates the submit button.
-
-**Why do we add it?**  
-Because forms usually need a button to send data.
-
-At this stage, the form will not truly process data.  
-That is okay.  
-For now, we are learning page structure.
+This gives vertical spacing between list items.
 
 ---
 
-## Step 10.8 – Add the footer
+## 19. Step 12 – Style the contact form
 
-After `</main>`, add:
+Add:
 
-### HTML:
+### CSS:
 
-```html
-<footer>  
-    <hr>  
-    <p>&copy; 2026 Campus Tech Store. All rights reserved.</p>  
-    <p>Designed for IT1100 HTML Lab</p>  
-</footer>
+```css
+.contact-form {
+    background-color: #f8fbfd;
+    padding: 20px;
+    border: 1px solid #d3e0ea;
+    border-radius: 8px;
+}
+
+.contact-form label {
+    font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 15px;
+    border: 1px solid #bbbbbb;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.contact-form input[type="submit"] {
+    background-color: #1d4d7a;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.contact-form input[type="submit"]:hover {
+    background-color: #163a5b;
+}
+
 
 
 ```
 
 ### Explanation
 
-### `<footer>`
+### `input[type="text"]`
 
-This marks the bottom section of the webpage.
+This targets text input fields.
 
-**Why do we add it?**  
-Because websites usually end with ownership or copyright information.
+### `textarea`
 
-### `<hr>`
+This styles the message box.
 
-This adds a horizontal line.
+### `width: 100%`
 
-**Why do we add it?**  
-Because it visually separates the footer from the main content.
+This makes the field take the full width of the form.
 
-### `&copy;`
+### `box-sizing: border-box`
 
-This is the HTML entity for the copyright symbol.
+This makes width calculation easier.
 
-**Why do we use it?**  
-Because it correctly displays the copyright sign.
+### `cursor: pointer`
+
+This changes the mouse cursor on the button.
 
 ---
 
-## 11. Full completed code
+## 20. Step 13 – Style the footer
 
-Now here is the full final code for `index.html`.
+Add:
 
-Copy it carefully if needed.
+### CSS:
 
-### HTML:
+```css
+footer {
+    text-align: center;
+    padding: 20px 0 10px 0;
+    color: #555555;
+    font-style: italic;
+}
 
-```html
-<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Campus Tech Store</title>  
-</head>  
-<body>  
-  
-    <header>  
-        <img src="images/logo.png" alt="Campus Tech Store Logo" width="120">  
-        <h1>Campus Tech Store</h1>  
-        <p>Your student-friendly place for tech essentials</p>  
-    </header>  
-  
-    <nav>  
-        <ul>  
-            <li><a href="#home">Home</a></li>  
-            <li><a href="#products">Products</a></li>  
-            <li><a href="#about">About</a></li>  
-            <li><a href="#contact">Contact</a></li>  
-        </ul>  
-    </nav>  
-  
-    <main>  
-        <section id="home">  
-            <h2>Welcome to Campus Tech Store</h2>  
-            <p>  
-                We provide useful and affordable tech products for university students.  
-                Explore laptops, headphones, smart watches, and accessories in one place.  
-            </p>  
-            <img src="images/hero.jpg" alt="Students using technology" width="400">  
-        </section>  
-  
-        <section id="products">  
-            <h2>Our Products</h2>  
-            <p>Here are some popular items available for students.</p>  
-  
-            <table border="1">  
-                <tr>  
-                    <th>Product Name</th>  
-                    <th>Description</th>  
-                    <th>Price</th>  
-                </tr>  
-                <tr>  
-                    <td>Laptop</td>  
-                    <td>Good for assignments, programming, and online lectures</td>  
-                    <td>Rs. 185000</td>  
-                </tr>  
-                <tr>  
-                    <td>Headphones</td>  
-                    <td>Useful for music, meetings, and video lessons</td>  
-                    <td>Rs. 8500</td>  
-                </tr>  
-                <tr>  
-                    <td>Smart Watch</td>  
-                    <td>Helps track time, fitness, and notifications</td>  
-                    <td>Rs. 12000</td>  
-                </tr>  
-            </table>  
-        </section>  
-  
-        <section id="about">  
-            <h2>About Us</h2>  
-            <p>  
-                Campus Tech Store was created to help students find simple and affordable  
-                technology products for study and daily use.  
-            </p>  
-            <p>  
-                This website is built as a learning project for HTML, CSS, and JavaScript.  
-            </p>  
-        </section>  
-  
-        <section id="contact">  
-            <h2>Contact Us</h2>  
-            <form>  
-                <label for="fullname">Full Name:</label><br>  
-                <input type="text" id="fullname" name="fullname"><br><br>  
-  
-                <label for="email">Email Address:</label><br>  
-                <input type="email" id="email" name="email"><br><br>  
-  
-                <label for="message">Message:</label><br>  
-                <textarea id="message" name="message" rows="5" cols="30"></textarea><br><br>  
-  
-                <input type="submit" value="Send Message">  
-            </form>  
-        </section>  
-    </main>  
-  
-    <footer>  
-        <hr>  
-        <p>&copy; 2026 Campus Tech Store. All rights reserved.</p>  
-        <p>Designed for IT1100 HTML Lab</p>  
-    </footer>  
-  
-</body>  
-</html>
+footer hr {
+    border: 0;
+    border-top: 1px solid #000000;
+    margin-bottom: 15px;
+}
+
+footer a {
+    color: #1d4d7a;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
 
 
 ```
 
-## 12. What your project folder should look like now
---------------------------------------------------
+## 23. Check your work
 
-```text
-IWT_Lab_01  
-│  
-├── src  
-│   ├── images  
-│   │   ├── logo.png  
-│   │   └── hero.jpg  
-│   ├── styles  
-│   ├── js  
-│   └── index.html
+After saving both files, open `index.html` in the browser and check these:
 
-
-
-```
-
-## 13. How to run the website
----------------------------
-
-1.  Save the file.
-    
-2.  Open the `src` folder.
-    
-3.  Double-click `index.html`.
-    
-
-Or:
-
-1.  Right-click `index.html`
-    
-2.  Open with Chrome / Edge / Firefox
-    
-
-The browser will display your webpage.
+- the page has a light background
+- the content appears inside a centered white area
+- the header looks neat
+- the menu is horizontal
+- the table looks styled
+- the Student Offers list is readable
+- the form fields are full width and neat
+- the footer is centered and styled
+- the inline CSS example is visible
+- the internal CSS example is visible
+- the external CSS styles are visible
 
 ---
 
-## 14. Check your work
---------------------
+## 24. Common mistakes and fixes
 
-Before moving to the final task, make sure:
-
-- the page opens in the browser
-- the title shows on the browser tab
-- the logo image appears
-- the menu links are visible
-- the home, products, about, and contact sections are visible
-- the table is visible
-- the form fields are visible
-- the footer is visible
-
----
-
-## 15. Common mistakes and fixes
-------------------------------
-
-### Problem: Image is not showing
+### Problem: CSS is not applying
 
 Check:
 
-- is the image really inside the `images` folder?
-- is the file name exactly correct?
-- did you write `images/logo.png` correctly?
-
-### Problem: Menu link does not move to section
-
-Check:
-
-- does the section have the matching `id`?
-- for example, if the link is `href="#about"`, the section must be `id="about"`
-
-### Problem: Page looks too plain
-
-That is normal.  
-This is only the HTML lab.  
-In the next lab, you will add CSS styles.
-
-### Problem: Code is not working
-
-Check:
-
-- are all opening tags closed properly?
-- did you forget `>` or `</tag>` somewhere?
-- did you save the file before opening it in the browser?
-
----
-
-## 16. Final task for the second hour
------------------------------------
-
-Now complete this final task using the website you already created.
-
-### Final Task: Extend the HTML page
---------------------------------
-
-Add the following new features to your existing `index.html` file.
-
-### Task A – Add a new section called “Student Offers”
-
-Below the products section, add a new section with:
-
-- a heading
-- a short paragraph
-- an ordered list with 3 offers
-
-Example content:
-
-- 10% discount for first-year students
-- free delivery inside campus
-- free laptop bag with selected items
-
-### Task B – Add one more product row to the table
-
-Add a fourth product to the table.
-
-Example:
-
-- Product Name: USB Flash Drive
-- Description: Useful for storing and transferring files
-- Price: Rs. 2500
-
-### Task C – Add phone number field to the contact form
-
-Add a new input field for phone number above the message box.
-
-Use:
-
-```html
-<label for="phone">Phone Number:</label><br>
-<input type="text" id="phone" name="phone"><br><br>
-
-
-```
-
-### Task D – Add one external link in the footer
-
-Add a link to a useful technology website such as [W3Schools](https://www.w3schools.com/).
+- did you create `styles.css` inside the `styles` folder?
+- did you write this correctly in the HTML?
 
 ### HTML:
 
 ```html
-<footer>
-    <hr>
-    <p>&copy; 2026 Campus Tech Store. All rights reserved.</p>
-    <p>Designed for IT1100 HTML Lab</p>
-    <p><a href="https://www.w3schools.com/" target="_blank">Visit W3Schools</a></p>
-</footer>
+<link rel="stylesheet" href="styles/styles.css">
 
 
 ```
+
+- did you save both files?
+
+### Problem: Internal CSS is not working
+
+Check:
+
+- did you place the `<style>` section inside `<head>`?
+- did you use the class name correctly?
+
+### Problem: Inline CSS is not working
+
+Check:
+
+- did you write the `style` attribute inside the HTML tag?
+- did you use correct CSS property names?
+
+### Problem: The menu is still vertical
+
+Check:
+
+- are you styling `nav ul li` with `display: inline-block;`?
+- did your HTML keep the `<ul>` and `<li>` structure?
+
+### Problem: The table still looks old
+
+Check:
+
+- did you remove `border="1"` from the table?
+- did you add `class="product-table"`?
+
+### Problem: The logo is not centered
+
+Check:
+
+- did you add `class="logo"` to the image?
+- did you include `.logo` CSS?
+
+---
+
+## 25. Final task for the second hour
+
+This final task must be done using the **website that already includes the Lab 01 final task answer**.
+
+That means you must continue from the version that already has:
+
+- Student Offers section
+- USB Flash Drive product
+- Phone Number input
+- W3Schools footer link
+
+Now, apply these extra CSS improvements to that same website.
+
+You must also practice all three CSS methods in this final task:
+
+- inline CSS
+- internal CSS
+- external CSS
+
+---
+
+## Final Task – Improve the styling further
+
+### Task A – Practice inline CSS
+
+Using **inline CSS**, style one sentence in the Home section.
+
+Requirements:
+
+- change the text color
+- make the text bold
+
+### Example:
+
+```html
+<p style="color: darkgreen; font-weight: bold;">
+    This sentence is styled using inline CSS.
+</p>
+
+
+
+```
+
+### Task B – Practice internal CSS
+
+Using **internal CSS**, add a style for a small note in the About section.
+
+Inside `<head>`, add or edit the `<style>` section like this:
+
+### HTML:
+
+```html
+<style>
+    .about-note {
+        background-color: #eef7ff;
+        color: #003366;
+        padding: 10px;
+        border-left: 4px solid #3399cc;
+    }
+</style>
+
+
+```
+
+Then inside the About section, add:
+
+### HTML:
+
+```html
+<p class="about-note">This note is styled using internal CSS.</p>
+
+
+```
+
+### Task C – Highlight the Student Offers section using external CSS
+
+Style the `#offers` section so that it stands out from the other sections.
+
+Add:
+
+- a light yellow background
+- a left border
+- some extra padding
+
+---
+
+### Task D – Make the product table rows react on hover using external CSS
+
+When the user moves the mouse over a product row, change its background color.
+
+---
+
+### Task E – Style the phone number field exactly like the other input fields using external CSS
+
+Make sure it is included in the CSS selector and gets the same width, padding, and border styling.
+
+---
+
+### Task F – Improve the footer link using external CSS
+
+Make the external link bold, and add a different color on hover.
+
+---
+
+
+## 27. Explanation of the final task
+
+### Why do we include all three CSS methods?
+
+Because students should not only know the names of the three methods.  
+They should also practice each one.
+
+### Why is external CSS still the main method?
+
+Because it is the best method for styling a full website in a clean and organized way.
+
 ### Why is this final task useful?
 
-Because it helps you practice:
+Because it helps students practice:
 
-*   adding new sections
-*   adding list elements
-*   editing a table
-*   editing a form
-*   adding an external hyperlink
-
-These are important HTML skills.
-
-## 18. What will happen in the next lab
--------------------------------------
-
-In the next lab sheet, you will use the **same website** and add CSS.
-
-You will learn how to:
-
-*   change colors
-*   align content
-*   style the navigation bar
-*   improve the table
-*   style the form
-*   make the page look neat and attractive
-
-This directly follows the progression in your earlier materials where structure comes first, then styling, then JavaScript behavior.
+- inline CSS
+- internal CSS
+- external CSS
+- styling sections
+- styling tables
+- styling forms
+- styling links
 
 ---
 
-## 19. What to upload to GitHub
------------------------------
+## 28. What happens in the next lab
 
-Upload the whole project folder to your GitHub repository.
+In the next lab sheet, you will continue with this same HTML + CSS website and add **JavaScript**.
 
-At minimum, your repository should contain:
+You will use JavaScript to add simple interactive features such as button actions, dynamic text changes, and other page behavior.
+
+---
+
+## 29. What to upload to GitHub
+
+Upload the updated project with:
+
+- `index.html`
+- `styles/styles.css`
+- image files
+- the completed final task changes
+
+Your project should now look like this:
 
 ```text
-IWT_Lab_01/
-└── src/
-    ├── images/
-    ├── styles/
-    ├── js/
-    └── index.html
-
-
+IWT_Lab_01
+│
+├── src
+│   ├── images
+│   │   ├── logo.png
+│   │   └── hero.jpg
+│   ├── styles
+│   │   └── styles.css
+│   ├── js
+│   └── index.html
 
 ```
 
-## 20. Submission reminder
-------------------------
+## 30. Submission reminder
 
 Before submission, make sure:
 
-*   your HTML file works
-*   the images are included
-*   the final task is completed
-*   the file names are correct
-*   the project is uploaded to GitHub properly
+- your HTML file works
+- the CSS file is connected properly
+- the images are included
+- inline CSS practice is included
+- internal CSS practice is included
+- external CSS styling is included
+- the final task is completed
+- the file names are correct
+- the project is uploaded to GitHub properly
+
+---
+
+---
+
+<div align="center">
+
+<svg width="100%" height="90" viewBox="0 0 800 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Decorative divider">
+  <defs>
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#dbeafe"/>
+      <stop offset="50%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#dbeafe"/>
+    </linearGradient>
+  </defs>
+  <line x1="80" y1="45" x2="320" y2="45" stroke="url(#lineGrad)" stroke-width="3"/>
+  <circle cx="400" cy="45" r="10" fill="#60a5fa"/>
+  <circle cx="400" cy="45" r="4" fill="#ffffff"/>
+  <line x1="480" y1="45" x2="720" y2="45" stroke="url(#lineGrad)" stroke-width="3"/>
+</svg>
+
+# Final Note
+
+Well done on reaching the end of this CSS lab sheet.
+
+You have taken another important step in learning how to build and style web pages.  
+Keep practicing each part carefully, try small changes on your own, and continue improving your work step by step.
+
+Wishing you all the best with the rest of the lab activities.
+
+**Happy coding.**
+
+</div>
 
 
-## 20. Submission reminder
-------------------------
 
-Before submission, make sure:
-
-*   your HTML file works
-*   the images are included
-*   the final task is completed
-*   the file names are correct
-*   the project is uploaded to GitHub properly
